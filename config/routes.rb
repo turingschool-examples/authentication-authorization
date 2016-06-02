@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "products#show"
+  
   resources :users, only: [:new, :create, :show]
 
   resources :products, only: [:index, :show]
