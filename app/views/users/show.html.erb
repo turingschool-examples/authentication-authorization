@@ -1,4 +1,8 @@
 <h1>Dashboard for:</h1>
 <h1><%= @user.username %></h1>
 
+<% if current_admin? %>
+  <h3>YOU'RE AN ADMIN</h3>
+<% end %>
+
 <%= button_to "Logout", logout_path, method: :delete %>

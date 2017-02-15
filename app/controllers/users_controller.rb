@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "Congrats! You created a user"
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render :new
