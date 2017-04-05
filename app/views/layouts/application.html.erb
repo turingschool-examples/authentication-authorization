@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-x`
+  <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: "flash_#{type}" %>
+  <% end %>
 
 <%= yield %>
 
